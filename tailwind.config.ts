@@ -8,7 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      
+      colors: {
+        'pph-primary':'#FFF',
+        }
     },
   },
   plugins: [require('daisyui')],
