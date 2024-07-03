@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function Navbar() {
@@ -8,7 +9,7 @@ export default function Navbar() {
     ]
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-white text-black border border-b-black">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -29,7 +30,7 @@ export default function Navbar() {
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                         {
-                            navLinks.map( (navLink) => <li key={navLink.title}><a>{navLink.title}</a></li> )
+                            navLinks.map( (navLink) => <li key={navLink.title}><Link href={navLink.href}>{navLink.title}</Link></li> )
                         }
                     </ul>
                 </div>
@@ -38,7 +39,7 @@ export default function Navbar() {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {
-                        navLinks.map( (navLink) => <li key={navLink.title}><a>{navLink.title}</a></li> )
+                        navLinks.map( (navLink) => <li key={navLink.title}><Link href={navLink.href}>{navLink.title}</Link></li> )
                     }
                 </ul>
             </div>
