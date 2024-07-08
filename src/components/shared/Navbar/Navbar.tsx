@@ -1,7 +1,14 @@
+'use client'
+
 import Link from 'next/link'
 import React from 'react'
+import { useSession, signIn, signOut } from 'next-auth/react'
+import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
+    const { data: session } = useSession();
+    const router = useRouter();
+
     const navLinks = [
         { title: 'Home', href: '/' },
         { title: 'About', href: '/about' },
@@ -44,7 +51,16 @@ export default function Navbar() {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Login</a>
+                {
+                    session ? (
+                        <div className="flex items-center">
+                            <span className="mr-2">{session.user?.name}</span>
+                            <button onClick={() => signOut()} className="btn btn-ghost">Sign Out</button>
+                        </div>
+                    ) : (
+                        <button onClick={() => router.push('signin')} className="btn btn-ghost">Sign In</button>
+                    )
+                }
             </div>
         </div>
     )
