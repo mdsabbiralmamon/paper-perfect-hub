@@ -20,6 +20,34 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Setup environment variables:
+
+To work this app properly you need to setup some necessary envs:
+
+```bash
+
+# App
+
+NEXTAUTH_URL="http://localhost:3000"
+NEXTAUTH_SECRET="3BRAQWnfbEfhT3fnlrVMEHe2T7TG9ky4sfs//Xx+8Vc="
+
+# firebase
+
+VITE_API_KEY= "Add yours"
+VITE_AUTH_DOMAIN= "Add yours"
+VITE_PROJECT_ID= "Add yours"
+VITE_STORAGE_BUCKET= "Add yours"
+VITE_MESSAGING_SENDERID= "Add yours"
+VITE_APP_ID= "Add yours"
+VITE_MEASUREMENT_ID= "Add yours"
+
+# github
+
+GITHUB_ID= "Add yours"
+GITHUB_SECRET= "Add yours"
+
+```
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
