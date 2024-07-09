@@ -3,6 +3,7 @@ import { signIn } from 'next-auth/react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 export default function Signin() {
   const [email, setEmail] = useState('');
@@ -17,7 +18,9 @@ export default function Signin() {
     <>
       <div className="flex min-h-screen flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-white">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <Image src="/logo.png" alt="logo" width={100} height={100} />
+          <div className='flex justify-center items-center'>
+            <Image src="/logo.png" alt="logo" width={100} height={100} />
+          </div>
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Sign in to your account
           </h2>
@@ -87,8 +90,9 @@ export default function Signin() {
           <div className='mt-4 flex items-center justify-center'>
             <div className='text-gray-700 w-full'>
               <div className="divider divider-primary w-full">Or continue with</div>
-              <div className='mt-10'>
-              <button onClick={handleGithubSignIn} className='btn btn-ghost text-gray-700 border-gray-300'>Sign in with GitHub</button>
+              <div className='mt-10 flex justify-center items-center gap-8'>
+                <button onClick={handleGithubSignIn} className='btn btn-primary text-gray-700 border-gray-300'><FaGithub className='text-2xl text-white' /></button>
+                <button onClick={handleGithubSignIn} className='btn btn-primary text-gray-700 border-gray-300'><FaGoogle className='text-2xl text-white' /></button>
               </div>
             </div>
           </div>
