@@ -46,6 +46,9 @@ NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID= "Add yours"
 GITHUB_ID= "Add yours"
 GITHUB_SECRET= "Add yours"
 
+GOOGLE_CLIENT_ID= "Add yours"
+GOOGLE_CLIENT_SECRET= "Add yours"
+
 ```
 
 ## Learn More
