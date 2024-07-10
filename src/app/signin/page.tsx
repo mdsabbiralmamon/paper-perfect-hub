@@ -14,6 +14,10 @@ export default function Signin() {
     await signIn('github', { callbackUrl: '/' });
   };
 
+  const handleGoogleSignIn = async () => {
+    await signIn('google', { callbackUrl: '/' });
+  };
+
   return (
     <>
       <div className="flex min-h-screen flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-white">
@@ -92,7 +96,7 @@ export default function Signin() {
               <div className="divider divider-primary w-full">Or continue with</div>
               <div className='mt-10 flex justify-center items-center gap-8'>
                 <button onClick={handleGithubSignIn} className='btn btn-primary text-gray-700 border-gray-300'><FaGithub className='text-2xl text-white' /></button>
-                <button onClick={handleGithubSignIn} className='btn btn-primary text-gray-700 border-gray-300'><FaGoogle className='text-2xl text-white' /></button>
+                <button onClick={handleGoogleSignIn} className='btn btn-primary text-gray-700 border-gray-300'><FaGoogle className='text-2xl text-white' /></button>
               </div>
             </div>
           </div>
