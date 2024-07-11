@@ -28,7 +28,7 @@ export default function Signup() {
           <p className="mt-10 text-center text-sm text-gray-600">
             Already a member?{' '}
             <button onClick={() => router.push('signin')} className="font-semibold leading-6 text-indigo-500 hover:text-indigo-400">
-              Sign Ip
+              Sign In
             </button>
           </p>
         </div>
