@@ -1,18 +1,34 @@
 'use client';
 import { auth } from '@/firebase/firebase';
+import { updateName } from '@/firebase/manageUser';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import Swal from 'sweetalert2';
 
 export default function Signup() {
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordAgain, setPasswordAgain] = useState('');
   const router = useRouter();
 
-  const signup = () => {
-    createUserWithEmailAndPassword(auth, email, password);
+  const signup = async () => {
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      await updateName(name);
+      Swal.fire({
+        title: 'Success!',
+        text: 'Signup successful. Click OK to proceed to the sign-in page.',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      }).then(() => {
+        router.push('/signin');
+      });
+    } catch (error) {
+      console.error("Error signing up:", error);
+    }
   };
 
   return (
@@ -35,6 +51,25 @@ export default function Signup() {
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <div className="space-y-6">
+            {/* Name */}
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium leading-6 text-black">
+                Full Name
+              </label>
+              <div className="mt-2">
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autoComplete="name"
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                  className="block p-4 w-full rounded-md border-0 bg-white py-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+
+            {/* Email */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-black">
                 Email address
@@ -103,5 +138,5 @@ export default function Signup() {
         </div>
       </div>
     </>
-  )
+  );
 }
