@@ -6,8 +6,12 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/firebase/firebase";
 
 export const authOptions = {
+  session: {
+    strategy: "jwt" as const,
+  },
   pages: {
     signIn: "/signin",
+    signUp: "/signup",
   },
   // Configure one or more authentication providers
   providers: [
@@ -22,10 +26,12 @@ export const authOptions = {
           (credentials as any).password || ""
         )
           .then((userCredential) => {
-            if (userCredential.user) {
-              return userCredential.user;
+            const user = {email: userCredential.user.email, name: userCredential.user.displayName};
+            if (user) {
+              return user;
             }
             return null;
+            
           })
           .catch((error) => console.log(error))
           .catch((error) => {
