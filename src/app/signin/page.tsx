@@ -4,11 +4,33 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
 export default function Signin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
+
+  const handleSignIn = async () => {
+    const result = await signIn('credentials', { email, password, redirect: false, callbackUrl: '/' })
+    if (result?.error) {
+      Swal.fire({
+        title: 'Failed!',
+        text: 'Sign in Failed. Please recheck Credentials...',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+    } else {
+      Swal.fire({
+        title: 'Success!',
+        text: 'Sign in successful. Redirecting...',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      }).then(() => {
+        router.push('/');
+      });
+    }
+  };
 
   const handleGithubSignIn = async () => {
     await signIn('github', { callbackUrl: '/' });
@@ -75,7 +97,7 @@ export default function Signin() {
 
             <div>
               <button
-                onClick={() => signIn('credentials', { email, password, redirect: true, callbackUrl: '/' })}
+                onClick={handleSignIn}
                 disabled={!email || !password}
                 className="disabled:opacity-40 flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
               >
