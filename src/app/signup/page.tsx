@@ -2,9 +2,11 @@
 import { auth } from '@/firebase/firebase';
 import { updateName } from '@/firebase/manageUser';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { signIn } from 'next-auth/react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 export default function Signup() {
@@ -13,6 +15,14 @@ export default function Signup() {
   const [password, setPassword] = useState('');
   const [passwordAgain, setPasswordAgain] = useState('');
   const router = useRouter();
+
+  const handleGithubSignIn = async () => {
+    await signIn('github', { callbackUrl: '/' });
+  };
+
+  const handleGoogleSignIn = async () => {
+    await signIn('google', { callbackUrl: '/' });
+  };
 
   const signup = async () => {
     try {
@@ -134,6 +144,16 @@ export default function Signup() {
                 Sign Up
               </button>
             </div>
+            {/* social login buttons */}
+          <div className='mt-4 flex items-center justify-center'>
+            <div className='text-gray-700 w-full'>
+              <div className="divider divider-primary w-full">Or continue with</div>
+              <div className='mt-10 flex justify-center items-center gap-8'>
+                <button onClick={handleGithubSignIn} className='btn btn-primary text-gray-700 border-gray-300'><FaGithub className='text-2xl text-white' /></button>
+                <button onClick={handleGoogleSignIn} className='btn btn-primary text-gray-700 border-gray-300'><FaGoogle className='text-2xl text-white' /></button>
+              </div>
+            </div>
+          </div>
           </div>
         </div>
       </div>
