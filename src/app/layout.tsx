@@ -23,9 +23,9 @@ export default async function RootLayout({
           <header>
             <Navbar />
           </header>
-          <main>
+          
             {children}
-          </main>
+          
           <footer>
             <Footer />
           </footer>
