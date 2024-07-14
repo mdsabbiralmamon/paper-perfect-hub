@@ -41,7 +41,7 @@ export default function Navbar() {
                         }
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">Paper Perfect Hub</a>
+                <a className="btn btn-ghost text-xl">PaperPerfect Hub</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
