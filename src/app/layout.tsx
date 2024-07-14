@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import SessionProvider from "@/providers/SessionProvider";
-import Navbar from "@/components/shared/Navbar/Navbar";
 import Footer from "@/components/shared/Footer/Footer";
 import { getServerSession } from "next-auth";
+import Header from "@/components/shared/Header/Header";
 
 export const metadata: Metadata = {
   title: "Paper Perfect Hub",
@@ -20,15 +20,9 @@ export default async function RootLayout({
     <html lang="en" data-theme="light">
       <body>
         <SessionProvider session={session}>
-          <header>
-            <Navbar />
-          </header>
-          
+          <Header />
             {children}
-          
-          <footer>
-            <Footer />
-          </footer>
+          <Footer />
         </SessionProvider>
       </body>
     </html>
