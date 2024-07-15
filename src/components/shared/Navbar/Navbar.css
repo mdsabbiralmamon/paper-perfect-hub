@@ -1,0 +1,18 @@
+/* Transition for the navbar */
+.navbar {
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+  }
+  
+  /* When navbar is hidden */
+  .navbar-hidden {
+    transform: translateY(-100%);
+  }
+  
+  /* When navbar is visible and fixed */
+  .navbar-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+  
