@@ -9,12 +9,12 @@ export default function Hero() {
   const { data: session } = useSession();
   return (
     <div className="">
-      <section className="bg-[#FCF8F1] bg-opacity-30 py-10 sm:py-16 lg:py-24">
+      <section className="bg-[#FCF8F1] bg-opacity-30 py-10 mt-10 sm:pt-16">
         <div className="px-4 mx-auto max-w-7xl sm:px-6 ">
           <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
             <div>
-              <p className="text-base font-semibold tracking-wider text-blue-600 uppercase">Get Your Academic Work Done Perfectly</p>
-              <h1 className="mt-4 text-4xl font-bold text-black lg:mt-8 sm:text-6xl xl:text-5xl"><span className='text-[#f4ae14]'>Assignments, Reports, and Presentations</span>
+              <p className="text-base font-semibold text-[#1660a0] uppercase">Get Your Academic Work Done Perfectly</p>
+              <h1 className="text-4xl font-bold text-black  lg:mt-8 sm:text-5xl xl:text-[54px] font-lora"><span className='text-[#f4ae14] font-lora'>Assignments, Reports, Presentations, and Excel Sheets</span>
               <br />We've Got You Covered.</h1>
               <p className="mt-4 text-base text-gray-600 lg:mt-8 sm:text-xl">Simplify your studies with professional help, anytime you need it.</p>
               {
