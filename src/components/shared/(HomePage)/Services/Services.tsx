@@ -43,12 +43,11 @@ const Services = () => {
 
     return (
         <div className='mx-auto max-w-7xl py-10'>
-            <div></div>
             <div className="container mx-auto p-6">
-                <h2 className="text-4xl font-bold mb-12 font-lora blue-shadow">
+                <h2 className="text-base md:text-4xl font-bold mb-12 font-lora blue-shadow">
                     Get Expert Help for Your Academic Needs
                     <br />
-                    <span className='text-xs font-lora text-[#1660a0]'>Assignments, Reports, Presentations, and Excel Sheets—Done Perfectly!</span>
+                    <span className='text-xs text-[#1660a0]'>Assignments, Reports, Presentations, and Excel Sheets—Done Perfectly!</span>
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
                     {cards?.map(card =>

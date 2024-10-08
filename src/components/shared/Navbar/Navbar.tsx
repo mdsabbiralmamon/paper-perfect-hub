@@ -75,7 +75,7 @@ export default function Navbar() {
                         width={40}
                         height={40}
                     />
-                    <h1 className='text-sm md:text-lg font-semibold text-black'>Paper Perfect</h1>
+                    <h1 className='text-sm md:text-lg font-semibold text-black'>Paper Perfect Hub</h1>
                 </Link>
             </div>
             <div className=" hidden lg:flex">

@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import React from 'react';
 
 const Features = () => {
@@ -15,10 +14,10 @@ const Features = () => {
                         </h2>
                     </div>
                     <div
-                        className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-12 gap-y-12 md:grid-cols-3 md:gap-0 mt-10">
+                        className="grid grid-cols-1 sm:grid-cols-2 sm:gap-x-12 gap-y-12 md:grid-cols-3 md:gap-4 mt-10">
 
                         {/* <!-- Feature 1 --> */}
-                        <div className='card bg-base-100 w-96 shadow-xl'>
+                        <div className='card bg-base-100 lg:w-96 shadow-xl'>
                             <div className="card-body md:p-8 lg:p-10 md:border-gray-200">
                                 <div className="w-14 h-14 rounded-full bg-teal-200 flex justify-center items-center">
                                     <i className="fa-solid fa-truck-fast text-3xl text-gray-900"></i>
@@ -29,7 +28,7 @@ const Features = () => {
                         </div>
 
                         {/* <!-- Feature 2 --> */}
-                        <div className='card bg-base-100 w-96 shadow-xl'>
+                        <div className='card bg-base-100 lg:w-96 shadow-xl'>
                             <div className="card-body md:p-8 lg:p-10 md:border-gray-200">
                                 <div className="w-14 h-14 rounded-full bg-yellow-200 flex justify-center items-center">
                                     <i className="fa-solid fa-shield text-3xl text-gray-900"></i>
@@ -40,7 +39,7 @@ const Features = () => {
                         </div>
 
                         {/* <!-- Feature 3 --> */}
-                        <div className='card bg-base-100 w-96 shadow-xl'>
+                        <div className='card bg-base-100 lg:w-96 shadow-xl'>
                             <div className="card-body md:p-8 lg:p-10 md:border-gray-200">
                                 <div className="w-14 h-14 rounded-full bg-green-200 flex justify-center items-center">
                                     <i className="fa-solid fa-pen-nib text-3xl text-gray-900"></i>

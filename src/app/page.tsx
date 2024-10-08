@@ -6,6 +6,7 @@ import Reviews from "@/components/shared/(HomePage)/Reviews/Reviews";
 import Services from "@/components/shared/(HomePage)/Services/Services";
 import { useSession } from "next-auth/react";
 
+
 export default function Home() {
   const { data: session } = useSession();
   const handleClick = () => {
