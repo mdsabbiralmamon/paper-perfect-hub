@@ -89,7 +89,7 @@ export default function Navbar() {
                 {
                     session ? (
                         <div className="flex items-center cursor-pointer">
-                            <Link className=' mr-4' href={'/user/dashboard'}>
+                            <Link className=' mr-4' href={`/account`}>
                                 <div
                                     tabIndex={0}
                                     role="button"

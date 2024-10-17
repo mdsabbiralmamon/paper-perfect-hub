@@ -97,7 +97,7 @@ const Reviews = () => {
 
     return (
         <div>
-            <section className="py-10 bg-[#1660a0] bg-opacity-10 sm:py-16 lg:py-24">
+            <section className="px-4 py-10 bg-[#1660a0] bg-opacity-10 sm:py-16 lg:py-24">
                 <Stats />
                 <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="max-w-2xl mx-auto text-center">

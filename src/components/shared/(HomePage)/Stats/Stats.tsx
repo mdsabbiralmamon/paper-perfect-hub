@@ -4,12 +4,12 @@ const Stats = () => {
     return (
         <div>
             <section className="pb-10">
-                <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div className="px-4 mx-auto max-w-full sm:px-6 lg:px-8">
                     <div className="text-center">
                         <h4 className="text-xl font-lora font-medium text-gray-900">Numbers tell the hard works we’ve done in last 1 years</h4>
                     </div>
 
-                    <div className="grid grid-cols-3 lg:gap-6 px-6 mt-8 sm:px-0 lg:mt-16 sm:grid-cols-4 xl:gap-x-12">
+                    <div className="grid grid-cols-3 lg:gap-10 md:px-6 mt-8 sm:px-0 lg:mt-16 sm:grid-cols-4 xl:gap-x-12">
 
                         <div className="overflow-hidden border rounded-lg hidden md:flex">
                             <div className="p-2 md:p-6">
