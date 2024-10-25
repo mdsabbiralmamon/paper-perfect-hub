@@ -1,6 +1,7 @@
 /* Transition for the navbar */
 .navbar {
     transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+    
   }
   
   /* When navbar is hidden */
